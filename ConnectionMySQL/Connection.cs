@@ -37,6 +37,20 @@ namespace ConnectionMySQL
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        static string SetData(string TableName,List<int> ids,List<string> description,List<double> price)
+        {
+            string command = string.Empty;
+            command += "CREATE TABLE " + TableName + "( data_id int NOT NULL AUTO_INCREMENT,data_desc char(50) NOT NULL,data_price double NOT NULL,PRIMARY KEY(data_id))ENGINE=InnoDB;"+"\r\n";
+            
+
+            for (int i = 0; i <= ids.Count - 1; i++)
+            {
+                command += "INSERT INTO " + TableName + "(data_id,data_desc,data_price) VALUES(" + ids[i] + ", '" + description[i] + "' ," + price[i] + ");"+"\r\n";
+                Console.WriteLine(command);
+            }
+            return command;
+        }
+        
         static void Main(string[] args)
         {
             MySqlConnection conn;
@@ -44,8 +58,10 @@ namespace ConnectionMySQL
             //创建数据库
             //CreatNewDatabase("localhost", "root", "X.517469", "test02");
             //创建数据表
-            //CreatNewDataTable("localhost", "root", "X.517469", "test01","Tables02");
-            myConnectionString = "server=localhost;uid=root;password=X.517469;port=3306;database=test01";
+            //CreatNewDataTable("localhost", "root", "X.517469", "test01","Tables03");
+            string command = SetData("Tables03", new List<int>() { 111, 112, 113 }, new List<string>() { "fir", "sec", "third" }, new List<double>() { 1.00, 2.01, 3.04 });
+            //Console.WriteLine(command);
+            myConnectionString = "server=localhost;uid=root;password=****;port=3306;database=test01";
             try
             {
                 conn = new MySqlConnection();
@@ -53,12 +69,12 @@ namespace ConnectionMySQL
                 conn.Open();
                 
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Tables02 ";
+                cmd.CommandText = command + "SELECT * FROM Tables03";
                 //cmd.CommandType = System.Data.CommandType.TableDirect;
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Console.WriteLine("{0}-->{1}",reader.GetString("prod_name"),reader.GetString("prod_id"));
+                    Console.WriteLine("{0}-->{1}",reader.GetString("data_id"),reader.GetString("data_desc"));
                 }
                 conn.Close();
             }
@@ -67,7 +83,7 @@ namespace ConnectionMySQL
                 Console.WriteLine(ex.Message);
             }
             Console.WriteLine("Done, ");
-            double a = -2.055624156;
+  
             Console.ReadLine();
         }
     }

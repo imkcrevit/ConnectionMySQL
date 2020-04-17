@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionMySQL", "ConnectionMySQL\ConnectionMySQL.csproj", "{2C89356B-E2B2-43DF-A1E6-07CFC9A79194}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitConnMySQL", "RevitConnMySQL\RevitConnMySQL.csproj", "{90F24BA5-EF0A-497D-AEE6-5C8BC2AE2B1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2C89356B-E2B2-43DF-A1E6-07CFC9A79194}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C89356B-E2B2-43DF-A1E6-07CFC9A79194}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C89356B-E2B2-43DF-A1E6-07CFC9A79194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F24BA5-EF0A-497D-AEE6-5C8BC2AE2B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F24BA5-EF0A-497D-AEE6-5C8BC2AE2B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F24BA5-EF0A-497D-AEE6-5C8BC2AE2B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F24BA5-EF0A-497D-AEE6-5C8BC2AE2B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
