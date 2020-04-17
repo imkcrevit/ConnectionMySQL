@@ -60,7 +60,7 @@ namespace RevitConnMySQL
         {
             MySqlConnection conn;
             string myConnectionString;
-            myConnectionString = "server=localhost;uid=root;password=X.517469;port=3306;database=test01";
+            myConnectionString = "server=localhost;uid=root;password=****;port=3306;database=test01";
             try
             {
                 conn = new MySqlConnection();

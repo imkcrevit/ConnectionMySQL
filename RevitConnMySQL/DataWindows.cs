@@ -38,5 +38,10 @@ namespace RevitConnMySQL
             conn.Close();
             conn.Dispose();
         }
+
+        private void DataWindows_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
