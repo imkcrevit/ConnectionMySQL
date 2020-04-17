@@ -56,9 +56,9 @@ namespace ConnectionMySQL
             MySqlConnection conn;
             string myConnectionString;
             //创建数据库
-            //CreatNewDatabase("localhost", "root", "X.517469", "test02");
+            //CreatNewDatabase("localhost", "root", "****", "test02");
             //创建数据表
-            //CreatNewDataTable("localhost", "root", "X.517469", "test01","Tables03");
+            //CreatNewDataTable("localhost", "root", "****", "test01","Tables03");
             string command = SetData("Tables03", new List<int>() { 111, 112, 113 }, new List<string>() { "fir", "sec", "third" }, new List<double>() { 1.00, 2.01, 3.04 });
             //Console.WriteLine(command);
             myConnectionString = "server=localhost;uid=root;password=****;port=3306;database=test01";
